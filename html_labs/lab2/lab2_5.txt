@@ -1,0 +1,52 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Форма</title>
+</head>
+<body>
+<form action="#">
+  <p><i>Пожалуйста, заполните форму. Обязательные поля помечены </i><em>*</em></p>
+  <fieldset>
+    <legend>Контактная информация</legend>
+      <label for="email">Email <em>*</em></label>
+      <input id="email" placeholder="Введите e-mail"><br>
+
+      <label for="password">Пароль <em>*</em></label>
+      <input id="password" placeholder="Введите пароль"
+      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+      title="Должен содержать по крайней мере одну цифру и одну букву верхнего или нижнего регистра, 
+             и по крайней мере 8 символов(все буквы латинского алфавита)" required><br>
+  </fieldset>
+  <fieldset>
+    <legend>Персональная информация</legend>
+      <label for="age">Возраст<em>*</em></label>
+      <input id="age"><br>
+      <div>
+		<label for="Gender"> Пол</label>
+    		<input type="radio" id="gender1"
+     		name="contact" value="male" checked>
+    		<label for="contactChoice1">Мужчина</label>
+
+		<input type="radio" id="gender2"
+     		name="contact" value="female">
+    		<label for="contactChoice2">Женщина</label>
+      </div>
+      <label for="comments">О себе</label>
+      <textarea id="comments"placeholder="Напишите коротко о себе"></textarea>
+  </fieldset>
+
+  <fieldset>
+    <legend>Я знаю</legend>
+    <label for="Russian"><input id="Russian" type="checkbox"> Русский</label><br>
+    <label for="Spanish"><input id="Spanish" type="checkbox"> Испанский</label><br>
+    <label for="Deutch"><input id="Deutch" type="checkbox"> Немецкий</label><br>
+    <label for="English"><input id="English" type="checkbox"> Английский</label><br>
+    <label for="Chinese"><input id="Chinese" type="checkbox"> Китайский</label><br>
+  </fieldset>
+  <p><input type="submit" value="Отправить информацию">
+  <input type="reset" value="Очистить"></p>
+</form>
+
+</form>
+</body>
+</html>
