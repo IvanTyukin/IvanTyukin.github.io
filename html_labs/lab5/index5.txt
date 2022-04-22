@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Список заданий №5</title>
+</head>
+<body>
+<a href="lab5_1.html">1 задание</a>
+<br>
+<a href="lab5_2.html">2 задание</a>
+<br>
+<a href="lab5_3.html">3 задание</a>
+<br>
+<a href="lab5_4.html">4 задание</a>
+<br>
+</body>
+</html>
