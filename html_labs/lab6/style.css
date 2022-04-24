@@ -1,0 +1,22 @@
+body{
+	background-color: black;
+	color: white;
+}
+h1,h2{
+	text-align: right;
+	color: red;
+	font-family: Arial;
+}
+p{
+	text-align: right;
+}
+em{
+	color: green;
+}
+
+@media print{
+body{
+	background-color: white;
+	color: black;
+}
+}
