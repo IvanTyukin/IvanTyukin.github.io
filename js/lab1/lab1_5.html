@@ -27,13 +27,13 @@
                     {
                         if ((cats < 2)&&(dogs < 4))
                         {
-                            if(!(Math.random() * (3 - 0) + 0)){ x[i][g] = "cat";  }
-                            else {x[i][g] = "dog"; }
+                            if(!(Math.random() * (3 - 0) + 0)){ x[i][g] = "cat";  cats++;}
+                            else {x[i][g] = "dog"; dogs++;}
                         }
                         else 
                         {
-                            if ( dogs < 4){x[i][g] = "dog"; }
-                            else {x[i][g] = "cat"; }
+                            if ( dogs < 4){x[i][g] = "dog"; dogs++; }
+                            else {x[i][g] = "cat"; cats++;}
                         }
                         console.log(x[i][g]);
                     }
