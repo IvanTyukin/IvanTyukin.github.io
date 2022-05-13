@@ -24,10 +24,10 @@
                     let text = '';
                     for (let j=0;j<6;j++)
                     {
-                        if(((i*6+j)%5==0)||((i*6+j)%5==1)||((i*6+j)%5==2))
-                            x[i][j]="dogs";
-                        else (((i*6+j)%5==3)||((i*6+j)%5==4))
-                            x[i][j]="cats";
+                        if(((i*n+j)%5==0)||((i*n+j)%5==1)||((i*n+j)%5==2))
+                            x[i][j]="dog";
+                        else (((i*n+j)%5==3)||((i*n+j)%5==4))
+                            x[i][j]="cat";
                         text+=x[i][j]+' ';
                     }
                     console.log(text);
