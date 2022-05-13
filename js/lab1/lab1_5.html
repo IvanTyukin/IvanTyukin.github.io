@@ -21,13 +21,14 @@
         
                for (let i = 0; i<n;i++)
                 {
+                    let text = '';
                     for (let j=0;j<6;j++)
                     {
                         if((i*n+j)%5==0||(i*n+j)%5==1||(i*n+j)%5==2)
                             x[i][j]="dogs";
                         else if((i*n+j)%5==3||(i*n+j)%5==4)
                             x[i][j]="dogs";
-                        let text = x.join(' ');
+                        text+=x[i][j]+' ';
                     }
                     console.log(text);
                 }
