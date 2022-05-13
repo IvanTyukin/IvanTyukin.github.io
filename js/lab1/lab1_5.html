@@ -12,30 +12,22 @@
     <script>
         
                 'use strict';
-                let n = prompt("Сколько строк?");
+                 let n = prompt("Сколько строк?");
                 let x = new Array(n);
                 for(let i = 0; i < n; i++)
                 {
                     x[i] = new Array(6);
                 }
         
-                for(let i = 0; i < n; i++)
-                {   
-                    let cats = 0;
-                    let dogs = 0;
-                    for(let g = 0 ; g < 6; g++)
+               for (let i = 0; i<n;i++)
+                {
+                    for (let j=0;j<6;j++)
                     {
-                        if ((cats < 2)&&(dogs < 4))
-                        {
-                            if(!(Math.random() * (3 - 0) + 0)){ x[i][g] = "cat";  cats++;}
-                            else {x[i][g] = "dog"; dogs++;}
-                        }
-                        else 
-                        {
-                            if ( dogs < 4){x[i][g] = "dog"; dogs++; }
-                            else {x[i][g] = "cat"; cats++;}
-                        }
-                        console.log(x[i][g]);
+                        if((i*n+j)%5==0||(i*n+j)%5==1||(i*n+j)%5==2)
+                            x[i][j]="dogs";
+                        else if((i*n+j)%5==3||(i*n+j)%5==4)
+                            x[i][j]="dogs";
+                        console.log(x[i][j].join(' '));
                     }
                     console.log('\n');
                 }
