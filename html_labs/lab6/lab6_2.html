@@ -14,9 +14,10 @@
 #container{
 	position: relative;
 	margin: 0 20% 0 20%;
-	display: inline-table;
+	display: flex;
+	flex-direction: column;
 	background-color: white;
-	height: 100%;
+	min-height: 100vh;
 	width: 60%;
 	padding: 10px 30px 10px 10px;
 }
@@ -55,7 +56,7 @@
 	margin-right: 210px;
 }
 #footer{
-
+	margin-top: auto;
 	height: 100px;
 	width: 100%;
 	background-color: #efcef0;
@@ -63,14 +64,7 @@
 ul{
 	list-style-image: url("pic/plus.png");
 }
-ender{
-	position: fixed;
-	left: 0; bottom: 0;
-	padding: 10px;
-	background: #39b54a;
-	color: white;
-	width: 100%;
-}
+ 
 </style>
 </head>
 <body>
@@ -91,11 +85,7 @@ ender{
 		</div>
 	</div>
 	<div id="footer"></div>
-	<ender>
-	<div>
-	footer
-	</div>
-	</ender>
+	 
 </div>
 </body>
 </html>
