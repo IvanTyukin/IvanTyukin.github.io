@@ -86,7 +86,8 @@ function fib(n) {
  * 
  */
 function compare(x) {
-  let result = function () {        
+  let result = function () {    
+      let y = prompt('Введите число y:');   
       if (y > x) return true
       else if (y < x) return false
       else return null;        
