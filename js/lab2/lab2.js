@@ -67,7 +67,7 @@ function factorial(n) {
       a = b;
       b = c;
     }
-    return b;
+    return b; 
   }
 
 
