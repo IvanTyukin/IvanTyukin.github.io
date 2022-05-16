@@ -6,18 +6,7 @@
  * @param {number} result - число x в стпени n
  */
 function pow(x, n) {
-  let result = x;
-if(n == 0)
-{
-  result = 1;
-}
-else{
-  for (let i = 1; i < n; i++) {
-    result *= x;
-  }
-}
-
-  return result;
+    return x**n;
 }
 
 
