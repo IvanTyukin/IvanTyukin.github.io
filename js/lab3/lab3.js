@@ -1,8 +1,5 @@
 'use strict';
-/**
- * 
- * @param {num} число дробную часть которого надо получить
- */
+
  function getDecimal(num) {
     let str = "" + num;
     let zeroPos = str.indexOf(".");
@@ -10,3 +7,11 @@
     str = str.slice(zeroPos);
     return +str;
   }
+
+
+  function ucFirst(str) {
+    if (!str) return str;
+  
+    return str[0].toUpperCase() + str.slice(1);
+  }
+  
