@@ -1,12 +1,8 @@
 'use strict';
 
  function getDecimal (num) {
-    num = Math.abs(num)
-    const str = num + ''
-    const index = str.indexOf('.')
-    const decimal = str.length - index
     
-    return (num - Math.floor(num)).toPrecision(decimal)
+    return (num-Math.floor(num));
   }
 
 
