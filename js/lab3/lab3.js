@@ -48,3 +48,13 @@ function truncate(str, maxlength) {
         str = str.slice(0, maxlength - 1) + '\u{2026}';
     return str;
 }
+
+
+function camelize(str) {
+    return str
+      .split('-') 
+      .map(
+        (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+      )
+      .join('');
+  }
