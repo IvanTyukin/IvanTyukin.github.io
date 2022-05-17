@@ -60,14 +60,16 @@ function camelize(str) {
   }
 
   function fibs(N){
-  if (!Number.isNaN(N))
-  if (N == 0) str = 0;
-  else
-      for (let j = 0; j < N; ++j) {
-          a[j] = fib(j);
-          str += a[j] + ' ';
-      }
+    if (!Number.isNaN(N))
+        if (N == 0) str = 0;
+        else
+            for (let j = 0; j < N; ++j) {
+                a[j] = fib(j);
+                str += a[j] + ' ';
+            }
     else str = NaN;
+
+    return str;
     
   function fib(j) {
     let a = 1n;
