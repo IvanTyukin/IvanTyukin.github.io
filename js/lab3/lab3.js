@@ -1,11 +1,12 @@
 'use strict';
 
- function getDecimal(num) {
-    let str = "" + num;
-    let zeroPos = str.indexOf(".");
-    if (zeroPos == -1) return 0;
-    str = str.slice(zeroPos);
-    return +str;
+ function getDecimal (num) {
+    num = Math.abs(num)
+    const str = num + ''
+    const index = str.indexOf('.')
+    const decimal = str.length - index
+    
+    return (num - Math.floor(num)).toPrecision(decimal)
   }
 
 
