@@ -1,10 +1,14 @@
 'use strict';
 
- function getDecimal (num) {
-    
-    return (num-Math.floor(num));
-  }
-
+ function getDecimal(num) {
+            let a = num.slice(num.indexOf('.'));
+            let str = '' + a;
+            if (Number(num) < 0) {
+                str = 1 - Number(str);
+                str = str.toFixed(a.length - 1);
+            }
+            return str;
+        }
 
   function ucFirst(str) {
     if (!str) return str;
