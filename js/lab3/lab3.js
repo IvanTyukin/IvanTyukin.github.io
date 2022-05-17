@@ -60,6 +60,8 @@ function camelize(str) {
   }
 
   function fibs(N){
+    let a = [];
+    let str = '';
     if (!Number.isNaN(N))
         if (N == 0) str = 0;
         else
@@ -71,20 +73,20 @@ function camelize(str) {
 
     return str;
     
-  function fib(j) {
-    let a = 1n;
-    let b = 1n;
-    let c;
-    if (j==0) return 0;
-    if (j==1) return 1;
-    if (j==2) return 1;
-    for (let i = 3; i <= j; i++) {
-      c = a + b;
-      a = b;
-      b = c;
+    function fib(j) {
+        let a = 1n;
+        let b = 1n;
+        let c;
+        if (j==0) return 0;
+        if (j==1) return 1;
+        if (j==2) return 1;
+        for (let i = 3; i <= j; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        if (b==1n)
+            b = 0;
+        return b; 
     }
-    if (b==1n)
-      b = 0;
-    return b; 
-  }
 }
