@@ -12,14 +12,14 @@
         let arr = [];
         let i = 0;
         let a;
-        let arrReverseSorted = [];
+    
         while (!Number.isNaN(a)) {
             a = +prompt("Введите эл-т массива. Символ/строка для завершения");
             if (!Number.isNaN(a))
                 arr[i] = +a;
             i++;
         }
-        arrReverseSorted = arr;
+        let arrReverseSorted = arr.slice();
         arrReverseSorted.sort((a, b) => b-a);
         console.log(arr);
         console.log(arrReverseSorted);
