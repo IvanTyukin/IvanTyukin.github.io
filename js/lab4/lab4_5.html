@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>задание 5</title>
+</head>
+<body>
+    <script>
+        let vasya = { name: "Вася", age: 23 };
+        let masha = { name: "Маша", age: 18 };
+        let vova = { name: "Вова", age: 12 };
+        let people = [ vasya , masha , vova ];
+        
+        sortByAge(people);
+
+        // теперь: [vasya, masha, petya]
+        alert(people[0].name); 
+        alert(people[1].name); 
+        alert(people[2].name); 
+
+
+        function sortByAge(people) {
+            arr.sort((a, b) => a.age < b.age ? 1 : -1);
+        }
+
+        sortByAge(people);
+
+        alert(people[0].name); 
+        alert(people[1].name); 
+        alert(people[2].name); 
+    </script>
+</body>
+</html>
