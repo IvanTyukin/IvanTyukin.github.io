@@ -10,17 +10,20 @@
     <script>
         'use strict';
 
-        function formatDate(d){
+        function formatDate(date) {
 
-        if(d.getMonth() < 9){
-            let data =   d.getDate() + "."+  0 + ( +d.getMonth() + 1) + "." + d.getFullYear() ;
-            }else{
-                let data =   d.getDate() + "."+ ( +d.getMonth() + 1) + "." + d.getFullYear() ;
-            }   
+            let dd = date.getDate();
+            if (dd < 10) dd = '0' + dd;
 
-            console.log(data);
-            return data;
+            let mm = date.getMonth() + 1;
+            if (mm < 10) mm = '0' + mm;
+
+            let yy = date.getFullYear() % 100;
+            if (yy < 10) yy = '0' + yy;
+
+            return dd + '.' + mm + '.' + yy;
         }
+
 
         let d = new Date(2022, 5, 22); 
         alert(formatDate(d));
