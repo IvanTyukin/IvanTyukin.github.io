@@ -7,6 +7,32 @@
     <title>Задание 2</title>
 </head>
 <body>
-    
+    <script>
+        'use strict';
+        let book1={};
+        book1.title = "Математический анализ";
+        book1.pubYear = 2003;
+        book1.price = 1500;
+        book1.show = function(){
+            console.log(book1.title +" - "+ book1.price);
+        }
+
+        function showBook(){
+            console.log(this.title +' - '+ this.price);
+        }
+           
+        
+        let book2={
+            title: "Алгоритмы: построение и анализ",
+            pubYear: 2013,
+            price: 1800,
+            show: showBook
+        };
+
+
+        book1.show();
+        console.log("\n");
+		book2.show();
+    </script>
 </body>
 </html>
