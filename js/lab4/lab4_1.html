@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        let book1={};
+
+        book1.title = "Математический анализ";
+        book1.pubYear = 2003;
+        book1.price = 1500;
+        
+        let book2={
+            title: "Алгоритмы: построение и анализ",
+            pubYear: 2013,
+            price: 1800
+        };
+
+        console.log("book1:");
+        for (let attribute in book1)
+            console.log(attribute +":"+ book1[attribute]);
+        console.log("\n");
+
+        console.log("book2:");
+        for (let attribute in book2)
+            console.log(attribute +":"+ book2[attribute]);
+
+
+    </script>
+</body>
+</html>
