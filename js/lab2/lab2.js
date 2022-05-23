@@ -3,7 +3,7 @@
  * 
  * @param {number} x возводимое в степень число
  * @param {number} n СтепенЬ - натуральное
- * @param {number} result - число x в стпени n
+ * @return {number} - число x в стпени n
  */
 function pow(x, n) {
     return x**n;
@@ -13,7 +13,7 @@ function pow(x, n) {
 /**
  * 
  * @param {number} n число до которого ведётся сумма
- * @param {number} result сумма чисел от 1 до n
+ *  @return (number) сумма чисел от 1 до n
  */
 function sumTo(n) {
   let result = 0;
@@ -30,7 +30,7 @@ function sumTo(n) {
 /**
  * 
  * @param {number} n число для факториала
- * @return {number}  - возращает n-1 для рекурсивного умножения до 1 
+ * @return {number}  - возращает n! 
  */
 function factorial(n) {
   if (n)
@@ -44,7 +44,7 @@ function factorial(n) {
  /**
  * 
  * @param {number} n - число чисел Фибоначи* 
- * @returns {number} - n-ное число Фибоначи
+ * @returns {bigInt} - n-ное число Фибоначи
  * 
  */
   function fib(n) {
@@ -73,13 +73,12 @@ function factorial(n) {
  * 
  */
 function compare(x) {
-  let result = function () {    
-      let y = prompt('Введите число y:');   
+  let result = function (y) {    
       if (y > x) return true
       else if (y < x) return false
       else return null;        
   }
-  return result();
+  return result;
 }
 
 
