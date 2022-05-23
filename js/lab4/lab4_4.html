@@ -29,10 +29,11 @@
             arr = Object.keys(subObj);
 
             this.className = arr.join(" ");
+
+            return this;
         }
 
-        obj.addClass('new');
-        obj.addClass('open');
+        obj.addClass('new').addClass('open');
 
         alert(obj.className);
 
@@ -46,10 +47,11 @@
                 }
             }
             this.className = arr.join(' ');
+            return this;
         }
 
 
-        obj.removeClass('open');
+        obj.removeClass('open').addClass('test');
         alert(obj.className);
     </script>
 </body>
