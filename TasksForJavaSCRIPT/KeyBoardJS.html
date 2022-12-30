@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            /* Общие настройки*/
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            /*Обертка окна и клавиатуры*/
+            #windowAndkeyboard {
+                max-width: 600px;
+                min-width: 300px;
+                border: 2px solid rgb(225,225,225);
+                margin: 10px auto;
+            }
+            
+            /*Экран для клавиатуры*/
+            #windowScreen {
+                height: 150px;
+                padding: 20px;
+                font-size: 30px;
+            }
+            
+            /*Обертка клавиатуры*/
+            #keyboard {
+                margin: 0;
+                padding: 10px 0 10px;
+                background: linear-gradient(to top, rgb(75,75,75), rgb(225,225,225));
+            }
+            
+            /*Ряды кнопок*/
+            #firstLine, #secondLine, #thirdLine {
+                text-align: center;
+            }
+            
+            /*Сами кнопки*/
+            #firstLine > div, #secondLine > div, #thirdLine > div {
+                display: inline-block;
+                font-size: 25px;
+                border: 1px solid rgb(180,180,180);
+                width: 30px;
+                text-align: center;
+                cursor: pointer;
+                margin: 2px;
+                border-radius: 3px;
+                background-color: rgb(220,220,220);
+                text-shadow: 1px 1px rgb(200,200,200);
+            }
+            
+            /*Кнопки при нажатии*/
+            #firstLine > div:active, #secondLine > div:active, #thirdLine > div:active {
+                background-color: rgb(150,150,150);
+            }
+
+            #secondLine > #CapsLock {
+                width: 110px;
+                white-space: nowrap;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="windowAndkeyboard">
+            <div id="windowScreen"></div>
+            <div id="keyboard">
+                <div id="firstLine">
+                    <div>q</div><div>w</div><div>e</div><div>r</div><div>t</div><div>y</div><div>u</div><div>i</div><div>o</div><div>p</div>
+                </div>
+                <div id="secondLine">
+                    <div id="CapsLock">Caps Lock</div><div>a</div><div>s</div><div>d</div><div>f</div><div>g</div><div>h</div><div>j</div><div>k</div><div>l</div>
+                </div>
+                <div id="thirdLine">
+                    <div>z</div><div>x</div><div>c</div><div>v</div><div>b</div><div>n</div><div>m</div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function myClass(myScreen, myKeyboard) {
+ 
+            this.screen = document.querySelector("#" + myScreen) || 0;
+            this.keyboard = document.querySelector("#" + myKeyboard) || 0;
+            this.keyboardLines = [];
+            
+            for(var i = 0; i < keyboard.childNodes.length; i++) {
+                if(keyboard.childNodes[i].nodeType == 1) 
+                    keyboardLines.push(keyboard.childNodes[i]);
+            }
+            
+            for(var i = 0; i < keyboardLines.length; i++) {
+                keyboardLines[i].onclick = function(event) {
+                    var target = event.target;
+                    if(target == keyboard || target == keyboardLines[i])
+                        return;
+                    screen.innerHTML += target.innerHTML;
+                };      
+            }
+            
+            }
+            myClass("windowScreen", "keyboard");
+        </script>
+    </body>
+</html>

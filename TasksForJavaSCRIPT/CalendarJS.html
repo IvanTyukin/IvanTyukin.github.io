@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        div#Calendar {
+            position: relative;
+            width: 290px;
+            margin: auto;
+        }
+        table, td, tr, th {
+            border: 1px solid black;
+            border-collapse: collapse;    
+            text-align: center;       
+        }
+        th {
+            background-color:aquamarine;
+        }
+        td, th {
+            width: 40px;
+            height: 40px;
+        }
+        td:hover {
+            background-color: darkgray;
+        }
+        caption {
+            font-size: 20px;
+        }
+        #rightArrow {
+            position: absolute;
+            float: right;
+            right: 10px;
+            cursor: pointer;
+        }
+        #leftArrow {
+            position: absolute;
+            float: left;
+            left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="Calendar">
+        <div id="leftArrow">&larr;</div>
+        <div id="rightArrow">&rarr;</div>
+        <table>
+            <tbody>
+                <tr>
+                    <th>пн</th><th>вт</th><th>ср</th><th>чт</th><th>пт</th><th>сб</th><th>вс</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
+    <script>
+        'use strict';
+
+
+        let DayInMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
+        let Months = ['Январь',
+                    'Февраль',
+                    'Март',
+                    'Апрель',
+                    'Май',
+                    'Июнь',
+                    'Июль',
+                    'Август',
+                    'Сентябрь',
+                    'Октябрь',
+                    'Ноябрь',
+                    'Декабрь'];
+
+        
+
+        
+        function CalendarBuilder(y, m, d = 1) {
+            let date = new Date(y,m,d);
+            let numOfMonth = date.getMonth();
+            let numOfYear = date.getFullYear();
+            let table = document.getElementsByTagName("table");
+            let caption = document.createElement("caption");
+            caption.innerHTML = Months[numOfMonth] + " " + numOfYear;
+            table[0].append(caption);
+ 
+            for (let i = 0; i < 6; i++) {
+                let tr = document.createElement("tr"); 
+                for (let j = 0; j < 7; j++) {
+                    let td = document.createElement("td");
+                    let day1 = new Date(numOfYear,numOfMonth,d); //2022.12.01
+                    let nowDate = new Date();
+
+                    if ((j + 1 == day1.getDay() ||  j-6 ==day1.getDay()) && d <= DayInMonth[numOfMonth]) {
+                        td.innerHTML = d;
+                        d += 1;    
+                    }
+                    if (nowDate.getDate() == day1.getDate()) {
+                        td.style.backgroundColor ="aquamarine";
+                        td.style.textDecoration = "underline";
+                    }
+                    tr.append(td);
+                }
+                table[0].append(tr);
+            }
+        }
+        
+
+
+
+
+
+        function DropTable () {
+            let table = document.getElementsByTagName("table");
+            let caption = document.getElementsByTagName("caption");
+            let tr = document.getElementsByTagName("tr");
+            while (table[0].rows.length > 1) {
+                table[0].deleteRow(1);
+            }
+            table[0].deleteCaption(caption[0]);
+            
+        }
+
+        let Month = 0; let Year = 2023; 
+        CalendarBuilder(Year,Month);
+        
+        
+        let rightArrow = document.querySelector("#rightArrow");
+        rightArrow.addEventListener("click", () => {
+            Month += 1;
+            DropTable();
+            if (Month > 11) {
+                Month = 0;
+                Year += 1;
+            }
+            CalendarBuilder(Year,Month);
+        });
+
+
+        let leftArrow = document.querySelector("#leftArrow");
+        leftArrow.addEventListener("click", () => {
+            Month -= 1;
+            DropTable();
+            if (Month < 0) {
+                Month = 11;
+                Year -= 1;
+            }
+            CalendarBuilder(Year,Month);
+        });
+
+
+    </script>
+</body>
+</html>

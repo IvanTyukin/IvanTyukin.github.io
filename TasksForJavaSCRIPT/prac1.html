@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 18px;
+            border: 1px solid black;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <textarea class="text" placeholder="Ввежите текст"></textarea><br>
+    Количество символов: <div class="textlen"></div><br>
+    Количество слов: <div class="numOfWords"></div>
+
+
+    <input type="checkbox" id="numSym" name="numSym" checked>
+    <label for="numSym">Количество символов</label>
+    <input type="checkbox" id="numWords" name="numWords" checked>
+    <label for="numWords">Количество слов</label>
+    <script>
+        'use strict';
+
+        let text = document.querySelector('.text');
+        let textlen = document.querySelector('.textlen');
+        let numOfWords = document.querySelector('.numOfWords');
+
+        text.addEventListener('blur', function(){
+            textlen.innerHTML = text.value.length;
+            numOfWords.innerHTML = text.value.split(' ').length;
+        });
+
+        let CheckBox = [];
+
+        CheckBox[0] = document.getElementById('numSym');
+        CheckBox[1] = document.getElementById('numWords');
+
+        
+       
+        CheckBox[0].addEventListener('click', function () {
+            textlen.classList.toggle('hide');
+        });
+        CheckBox[1].addEventListener('click', function () {
+            numOfWords.classList.toggle('hide');
+        });
+        
+    </script>
+</body>
+</html>
