@@ -32,6 +32,7 @@
         }
         caption {
             font-size: 20px;
+            margin-bottom: 5px;
         }
         #rightArrow {
             position: absolute;
@@ -53,6 +54,30 @@
         <div id="leftArrow">&larr;</div>
         <div id="rightArrow">&rarr;</div>
         <table>
+            <caption>
+                <select>
+                    <option>Январь</option>
+                    <option>Февраль</option>
+                    <option>Март</option>
+                    <option>Апрель</option>
+                    <option>Май</option>
+                    <option>Июнь</option>
+                    <option>Июль</option>
+                    <option>Август</option>
+                    <option>Сентябрь</option>
+                    <option>Октябрь</option>                    
+                    <option>Ноябрь</option>
+                    <option>Декабрь</option>
+                </select>
+                <select>
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                </select>
+            </caption>
             <tbody>
                 <tr>
                     <th>пн</th><th>вт</th><th>ср</th><th>чт</th><th>пт</th><th>сб</th><th>вс</th>
@@ -88,11 +113,7 @@
             let numOfMonth = date.getMonth();
             let numOfYear = date.getFullYear();
             let table = document.getElementsByTagName("table");
-            let caption = document.createElement("caption");
             
-            
-            caption.innerHTML = Months[numOfMonth] + " " + numOfYear;
-            table[0].append(caption);
             
 
             if (numOfYear % 4 == 0 && numOfYear% 100 != 0 || numOfYear % 400 == 0) {
@@ -128,42 +149,83 @@
 
         function DropTable () {
             let table = document.getElementsByTagName("table");
-            let caption = document.getElementsByTagName("caption");
             let tr = document.getElementsByTagName("tr");
             while (table[0].rows.length > 1) {
                 table[0].deleteRow(1);
-            }
-            table[0].deleteCaption(caption[0]);
-            
+            }    
         }
 
-        let Month = nowDate.getMonth(); let Year = nowDate.getFullYear(); 
-        CalendarBuilder(Year,Month);
+
         
+
+        
+
+        let select = document.getElementsByTagName("select");
+        select[0].addEventListener("change", () => {
+            DropTable();
+            Year = select[1].value;
+            Month = Months.indexOf(select[0].value)
+
+            CalendarBuilder(Year, Month);
+        });
+
+        select[1].addEventListener("change", () => {
+            DropTable();
+            Year = select[1].value;
+            Month = Months.indexOf(select[0].value)
+
+            CalendarBuilder(Year, Month);
+        });
+
+
+
+
+
+
+
+
         
         let rightArrow = document.querySelector("#rightArrow");
+
+
         rightArrow.addEventListener("click", () => {
-            Month += 1;
+            Month +=  1;
             DropTable();
+            
             if (Month > 11) {
                 Month = 0;
                 Year += 1;
             }
+            document.getElementsByTagName("select")[1].value = Year;
+            document.getElementsByTagName("select")[0].value = Months[Month];
             CalendarBuilder(Year,Month);
         });
 
 
+
+
+
+
+
         let leftArrow = document.querySelector("#leftArrow");
+
+
         leftArrow.addEventListener("click", () => {
             Month -= 1;
             DropTable();
             if (Month < 0) {
                 Month = 11;
-                Year -= 1;
+                Year -=  1;
             }
+            document.getElementsByTagName("select")[1].value = Year;
+            document.getElementsByTagName("select")[0].value = Months[Month];
             CalendarBuilder(Year,Month);
         });
 
+        let Month = nowDate.getMonth(); let Year = nowDate.getFullYear(); 
+        document.getElementsByTagName("select")[0].value = Months[Month];
+        document.getElementsByTagName("select")[1].value = Year;
+        CalendarBuilder(Year,Month);
 
     </script>
 </body>
