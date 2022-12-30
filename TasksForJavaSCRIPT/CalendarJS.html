@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Календарь</title>
     <style>
         * {
             padding: 0;
@@ -66,7 +66,7 @@
         'use strict';
 
 
-        let DayInMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
+        let DayInMonth;
         let Months = ['Январь',
                     'Февраль',
                     'Март',
@@ -79,7 +79,7 @@
                     'Октябрь',
                     'Ноябрь',
                     'Декабрь'];
-
+        let nowDate = new Date();
         
 
         
@@ -89,15 +89,23 @@
             let numOfYear = date.getFullYear();
             let table = document.getElementsByTagName("table");
             let caption = document.createElement("caption");
+            
+            
             caption.innerHTML = Months[numOfMonth] + " " + numOfYear;
             table[0].append(caption);
+            
+
+            if (numOfYear % 4 == 0 && numOfYear% 100 != 0 || numOfYear % 400 == 0) {
+                DayInMonth = [31,29,31,30,31,30,31,31,30,31,30,31];
+            }else {
+                DayInMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
+            }
  
             for (let i = 0; i < 6; i++) {
                 let tr = document.createElement("tr"); 
                 for (let j = 0; j < 7; j++) {
                     let td = document.createElement("td");
                     let day1 = new Date(numOfYear,numOfMonth,d); //2022.12.01
-                    let nowDate = new Date();
 
                     if ((j + 1 == day1.getDay() ||  j-6 ==day1.getDay()) && d <= DayInMonth[numOfMonth]) {
                         td.innerHTML = d;
@@ -129,7 +137,7 @@
             
         }
 
-        let Month = 0; let Year = 2023; 
+        let Month = nowDate.getMonth(); let Year = nowDate.getFullYear(); 
         CalendarBuilder(Year,Month);
         
         
