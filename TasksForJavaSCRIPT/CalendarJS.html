@@ -103,7 +103,7 @@
                         td.innerHTML = d;
                         d += 1;    
                     }
-                    if (nowDate.getDate() == day1.getDate()) {
+                    if (nowDate.getDate() == day1.getDate() && nowDate.getFullYear() == day1.getFullYear() && nowDate.getMonth() == day1.getMonth()) {
                         td.style.backgroundColor ="aquamarine";
                         td.style.textDecoration = "underline";
                     }
