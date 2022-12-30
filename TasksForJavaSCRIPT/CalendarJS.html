@@ -131,7 +131,7 @@
             }
  
             for (let i = 0; i < 6; i++) {
-                if (d <= DayInMonth[numOfMonth]) {
+                
                     let tr = document.createElement("tr"); 
                     for (let j = 0; j < 7; j++) {
                         let td = document.createElement("td");
@@ -151,7 +151,6 @@
                         tr.append(td);
                     }
                     table[0].append(tr);
-                }
                 
             }
         }
@@ -203,12 +202,11 @@
 
 
         rightArrow.addEventListener("click", () => {
-            Month +=  1;
+            Month = +Month + 1;
             DropTable();
-            
             if (Month > 11) {
                 Month = 0;
-                Year += 1;
+                Year = +Year + 1;
             }
             document.getElementsByTagName("select")[1].value = Year;
             document.getElementsByTagName("select")[0].value = Months[Month];
@@ -225,7 +223,7 @@
 
 
         leftArrow.addEventListener("click", () => {
-            Month -= 1;
+            Month = +Month - 1;
             DropTable();
             if (Month < 0) {
                 Month = 11;
