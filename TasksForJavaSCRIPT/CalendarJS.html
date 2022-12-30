@@ -46,6 +46,7 @@
             left: 10px;
             cursor: pointer;
         }
+
     </style>
 </head>
 <body>
@@ -130,22 +131,28 @@
             }
  
             for (let i = 0; i < 6; i++) {
-                let tr = document.createElement("tr"); 
-                for (let j = 0; j < 7; j++) {
-                    let td = document.createElement("td");
-                    let day1 = new Date(numOfYear,numOfMonth,d); //2022.12.01
+                if (d <= DayInMonth[numOfMonth]) {
+                    let tr = document.createElement("tr"); 
+                    for (let j = 0; j < 7; j++) {
+                        let td = document.createElement("td");
+                        let day1 = new Date(numOfYear,numOfMonth,d); //2022.12.01
 
-                    if ((j + 1 == day1.getDay() ||  j-6 ==day1.getDay()) && d <= DayInMonth[numOfMonth]) {
-                        td.innerHTML = d;
-                        d += 1;    
+                        if ((j + 1 == day1.getDay() ||  j-6 ==day1.getDay()) && d <= DayInMonth[numOfMonth]) {
+                            td.innerHTML = d;
+                            d += 1;    
+                        }
+                        if (nowDate.getDate() == day1.getDate() && nowDate.getFullYear() == day1.getFullYear() && nowDate.getMonth() == day1.getMonth()) {
+                            td.style.backgroundColor ="aquamarine";
+                            td.style.textDecoration = "underline";
+                        }
+                        if (j == 5 || j == 6) {
+                            td.style.color = "#9d5907";
+                        }
+                        tr.append(td);
                     }
-                    if (nowDate.getDate() == day1.getDate() && nowDate.getFullYear() == day1.getFullYear() && nowDate.getMonth() == day1.getMonth()) {
-                        td.style.backgroundColor ="aquamarine";
-                        td.style.textDecoration = "underline";
-                    }
-                    tr.append(td);
+                    table[0].append(tr);
                 }
-                table[0].append(tr);
+                
             }
         }
         
