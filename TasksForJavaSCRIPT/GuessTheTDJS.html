@@ -159,12 +159,12 @@
         
 
         document.querySelector("#submit").onclick = function () {
-             let i = 0;
-             while (i < 10) {
+             let j = 0;
+             while (j < 10) {
                 let number = Math.random() * 100 + 1;
                 if ( number not in arrAnswer ) {
                      arrAnswer.append(number);
-                     i += 1;
+                     j += 1;
                 } 
             }
 
