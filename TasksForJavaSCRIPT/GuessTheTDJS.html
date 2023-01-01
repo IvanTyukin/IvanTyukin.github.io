@@ -164,7 +164,7 @@
                      j += 1;
                 } 
             }
-        alert("hello");
+        alert("привет");
         document.querySelector("#submit").onclick = function () {
              
 
@@ -191,7 +191,7 @@
                 
                 if (arr.length<arrAnswer.length && timer > 75){
                      clearInterval(timerId);alert("YOU LOSE");
-                } else if (arr.length == arrAnswer.length && timerId <= 75 ) {
+                } else if (arr.length == arrAnswer.length && timer <= 75 ) {
                     clearInterval(timerId);
                     alert("YOU WIN, CHEERS");
                     location.reload();
