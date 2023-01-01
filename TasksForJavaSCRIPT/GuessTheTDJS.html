@@ -153,12 +153,21 @@
         'use strict';
 
         let tableTd = document.getElementsByTagName("td");
-        const arrAnswer = [1, 7, 19, 25, 28, 33, 45, 74, 81, 99];
+        let arrAnswer= [];
         let arr = [];
-
+        
         
 
         document.querySelector("#submit").onclick = function () {
+             let i = 0;
+             while (i < 10) {
+                let number = Math.random() * 100 + 1;
+                if ( number not in arrAnswer ) {
+                     arrAnswer.append(number);
+                     i += 1;
+                } 
+            }
+
             document.querySelector("#submit").style.backgroundColor="green";
 
 
