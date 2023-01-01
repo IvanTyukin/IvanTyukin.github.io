@@ -186,16 +186,17 @@
                 });
             }
             
-            let timerId;
-            timerId=setInterval(function () {
-                if (arr.length<arrAnswer.length && timerId > 75000){
+            let timer = 0;
+            let timerId = setInterval(function () {
+                
+                if (arr.length<arrAnswer.length && timer > 75){
                      clearInterval(timerId);alert("YOU LOSE");
-                } else if (arr.length == arrAnswer.length && timerId <= 75000 ) {
+                } else if (arr.length == arrAnswer.length && timerId <= 75 ) {
                     clearInterval(timerId);
                     alert("YOU WIN, CHEERS");
                     location.reload();
                 }
-
+                timer += 1
             },1000);
             
         }
