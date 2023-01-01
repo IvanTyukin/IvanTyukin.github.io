@@ -156,10 +156,7 @@
         let arrAnswer= [];
         let arr = [];
         
-        
-
-        document.querySelector("#submit").onclick = function () {
-             let j = 0;
+        let j = 0;
              while (j < 10) {
                 let number = Math.random() * 100 + 1;
                 if ( !(number in arrAnswer) ) {
@@ -167,6 +164,9 @@
                      j += 1;
                 } 
             }
+        alert(arrAnswer[1]) ;
+        document.querySelector("#submit").onclick = function () {
+             
 
             document.querySelector("#submit").style.backgroundColor="green";
 
