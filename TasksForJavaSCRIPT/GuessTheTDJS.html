@@ -164,7 +164,7 @@
                      j += 1;
                 } 
             }
-        alert("hello");
+        alert("hi");
         document.querySelector("#submit").onclick = function () {
              
 
@@ -175,7 +175,7 @@
                 tableTd[i].addEventListener('click', function () {
                     if (arrAnswer.includes(+tableTd[i].innerHTML)) {
                         tableTd[i].style.backgroundColor = 'green';
-                        arr.push(tableTd[i]);
+                        arr.push(+tableTd[i].innerHTML);
                     }
                     else {
                         tableTd[i].style.backgroundColor = "red";
@@ -188,14 +188,14 @@
             
             let timer = 0;
             let timerId = setInterval(function () {
-                
+                timer += 1
                 if (arr.length<arrAnswer.length && timer > 75){
                      alert("YOU LOSE");clearInterval(timerId);
                 } else if (arr.length == arrAnswer.length && timer <= 75 ) {
                     alert("YOU WIN, CHEERS");
                     clearInterval(timerId);
                 }
-                timer += 1
+                
             },1000);
             
         }
