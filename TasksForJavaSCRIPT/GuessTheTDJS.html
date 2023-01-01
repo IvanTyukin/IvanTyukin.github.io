@@ -159,7 +159,7 @@
         let j = 0;
              while (j < 10) {
                 let number = Math.floor(Math.random() * 100) + 1;
-                if ( !(number in arrAnswer) ) {
+                if ( !(arrAnswer.includes(number)) ) {
                      arrAnswer.push(number);
                      j += 1;
                 } 
