@@ -164,13 +164,13 @@
                      j += 1;
                 } 
             }
-        
+        alert("привет");
         document.querySelector("#submit").onclick = function () {
              
 
             document.querySelector("#submit").style.backgroundColor="green";
 
-
+             let timerId = setTimeout(function () {
             for (let i = 0; i < tableTd.length; i++) {
                 tableTd[i].addEventListener('click', function () {
                     if (arrAnswer.includes(+tableTd[i].innerHTML)) {
@@ -185,10 +185,11 @@
                     }
                 });
             }
-            setTimeout(function () {
+          
                 if (arr.length<arrAnswer.length){
                     alert("YOU LOSE");
                 } else if (arr.length == arrAnswer.length) {
+                    clearTimeout(timerId) ;
                     alert("YOU WIN, CHEERS");
                     location.reload();
                 }
