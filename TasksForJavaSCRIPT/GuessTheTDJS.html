@@ -164,7 +164,7 @@
                      j += 1;
                 } 
             }
-        alert("hi");
+        alert("привет");
         document.querySelector("#submit").onclick = function () {
              
 
@@ -173,11 +173,11 @@
              
             for (let i = 0; i < tableTd.length; i++) {
                 tableTd[i].addEventListener('click', function () {
-                    if (arrAnswer.includes(+tableTd[i].innerHTML)) {
+                    if (arrAnswer.includes(+tableTd[i].innerHTML) && !(arr.includes(+tableTd[i].innerHTML))) {
                         tableTd[i].style.backgroundColor = 'green';
                         arr.push(+tableTd[i].innerHTML);
                     }
-                    else {
+                    else if (!(arrAnswer.includes(+tableTd[i].innerHTML))){
                         tableTd[i].style.backgroundColor = "red";
                         setTimeout(function () {
                             tableTd[i].style.backgroundColor = "white";
