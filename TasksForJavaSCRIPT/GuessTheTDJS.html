@@ -17,9 +17,13 @@
             height: 40px;
             width: 40px;
         }
+        .timer {
+             border:1px solid green;
+         }
     </style>
 </head>
 <body>
+    <div class="timer">0</div>
     <table style="margin: 0 auto;">
         <caption style="font-size: 40px;">Угадайте все 10 цифр!</caption>
         <tbody>
@@ -185,18 +189,19 @@
                     }
                 });
             }
-            
+            let look = document.querySelector(".timer") 
             let timer = 0;
             let timerId = setInterval(function () {
                 timer += 1
-                if (arr.length<arrAnswer.length && timer > 50000){
+                look.innerHTML = timer;
+                if (arr.length<arrAnswer.length && timer > 50){
                      alert("YOU LOSE");clearInterval(timerId);
-                } else if (arr.length == arrAnswer.length && timer <= 50000 ) {
+                } else if (arr.length == arrAnswer.length && timer <= 50 ) {
                     alert("YOU WIN, CHEERS");
                     clearInterval(timerId);
                 }
                 
-            },1);
+            },1000);
             
         }
         
