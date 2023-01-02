@@ -164,7 +164,7 @@
                      j += 1;
                 } 
             }
-        alert("привет");
+        alert("hi");
         document.querySelector("#submit").onclick = function () {
              
 
@@ -189,14 +189,14 @@
             let timer = 0;
             let timerId = setInterval(function () {
                 timer += 1
-                if (arr.length<arrAnswer.length && timer > 75){
+                if (arr.length<arrAnswer.length && timer > 50000){
                      alert("YOU LOSE");clearInterval(timerId);
-                } else if (arr.length == arrAnswer.length && timer <= 75 ) {
+                } else if (arr.length == arrAnswer.length && timer <= 50000 ) {
                     alert("YOU WIN, CHEERS");
                     clearInterval(timerId);
                 }
                 
-            },1000);
+            },1);
             
         }
         
