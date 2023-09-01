@@ -148,16 +148,16 @@ function TaskList ({taskList, decorateTask, removeTask, reductTask, save}) {
     
 
     const result = taskList.map((elem, index, taskList) => {
-        let span;
+        let div;
         
         if (elem.isDone){
-            span = <span className="decorated">{elem.taskText}</span> 
+            div = <div className="text decorated">{elem.taskText}</div> 
         } else {
-            span = <span>{elem.taskText}</span>;
+            div = <div className="text">{elem.taskText}</div>;
         }
         let text;
         if (!elem.isReduct) {
-            text = span;
+            text = div;
         } else {
            
 
@@ -168,11 +168,11 @@ function TaskList ({taskList, decorateTask, removeTask, reductTask, save}) {
 
 
         return <li key={elem.id}>
-            <span className="input">
+            <div className="input">
                 <input type="checkbox" checked={elem.isDone} 
                     onChange={() => decorateTask(index, "isDone" , taskList)} />
                 {text}
-            </span>
+            </div>
             <span className="buttons">
                 <button className="removeButton" 
                     onClick={() => removeTask(index, taskList)}>
