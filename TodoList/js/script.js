@@ -111,6 +111,11 @@ function MainFrame ({taskList, addTask}) {
                 placeholder="Enter new task"
                 value={newText} 
                 onChange={(event) =>changeText(event)}
+		onKeyPress={(e) => {
+			if (e.key === 'Enter') {
+				addTask(newText, taskList, setNewText)
+			}
+		}}	
             />
             <button className="addTask"
                     onClick={() => addTask(newText, taskList, setNewText)}>
