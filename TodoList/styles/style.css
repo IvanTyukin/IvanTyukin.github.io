@@ -21,6 +21,10 @@ html {
   padding: 5px;
 }
 
+h2 {
+  margin-bottom: 40px;
+}
+
 h1,
 h2 {
   text-align: center;
@@ -77,8 +81,12 @@ hr {
   border: 2px dashed black;
 }
 
-span.decorated {
+div.decorated {
   text-decoration: line-through;
+}
+
+ul {
+  list-style: none;
 }
 
 li {
@@ -124,6 +132,11 @@ input {
 
 button:hover {
   background-color: rgba(0, 201, 100, 0.7);
+}
+
+.text {
+  max-width: 200px;
+  word-wrap: break-word;
 }
 
 @media (width < 450px) {
