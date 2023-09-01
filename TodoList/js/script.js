@@ -139,7 +139,13 @@ function TaskField({value, id, taskList, save}) {
     
     return (
         <>
-            <input value={curTaskValue} onChange={(event) => changeTask(event)} />
+            <input value={curTaskValue} 
+		onChange={(event) => changeTask(event)} 
+		onKeyPress={(e) => {
+			if (e.key === 'Enter') {
+				save(curTaskValue,id, taskList)
+			}
+		}} />
             <button onClick={() => save(curTaskValue,id, taskList)}><img src="add.png" /></button>
         </>
     );
